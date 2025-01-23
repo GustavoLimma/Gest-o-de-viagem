@@ -1,0 +1,63 @@
+<form class="c-form" 
+
+    {% if reserva %}
+        action="{{ url_for('reserva.atualizar_reserva', reserva_id=reserva.id) }}"
+
+    {% else %}
+        action="{{ url_for('reserva.inserir_reservas') }}" 
+    {% endif %}
+
+    method="{% if reserva %}PUT{% else %}POST{% endif %}"
+  
+    {% if reserva %}
+      c-swap="#reserva-{{reserva.id}}"
+    {% else %}
+      c-append="#Lista_reservas"
+    {% endif %}
+
+    c-reload-container="true">
+    <h6 class="text-center" >Adicionar ou editar reservas</h6>
+    <div class="mb-3">
+      <label class="form-label">Cliente</label>
+      <select class="form-control" name="cliente" required>
+        <option value="" selected disabled>Selecione um cliente</option>
+        {% for cliente in clientes %}
+        <option value="{{ cliente.id }}" 
+            {% if reserva and reserva.cliente_id == cliente.id %} selected {% endif %}>
+            {{ cliente.nome }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+    
+    
+    <div class="mb-3">
+      <label class="form-label">Pacote</label>
+      <select class="form-control" name="pacote" required>
+        <option value="" selected disabled>Selecione um pacote</option>
+        {% for pacote in pacotes %}
+        <option value="{{ pacote.id }}" 
+            {% if reserva and reserva.pacote_id == pacote.id %} selected {% endif %}>
+            {{ pacote.nome }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+    
+
+    <div class="mb-3">
+      <label class="form-label">Status</label>
+      <select class="form-control" name="status" required>
+        <option value="" selected disabled>Selecione um status</option>
+        <option value="Ativo" {% if reserva and reserva.status == 'Ativa' %} selected {% endif %}>Ativo</option>
+        <option value="Pendente" {% if reserva and reserva.status == 'Pendente' %} selected {% endif %}>Pendente</option>
+        <option value="Cancelado" {% if reserva and reserva.status == 'cancelado' %} selected {% endif %}>Cancelado</option>
+      </select>
+    </div>
+      
+    <button type="submit" class="btn btn-primary">
+      {% if cliente %} Salvar {% else %} Adicionar {% endif %}</button>     
+ 
+  </form>
+
+  

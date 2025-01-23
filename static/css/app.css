@@ -1,0 +1,83 @@
+.navbar {
+    background-color: #f8f9fa; 
+    padding: 10px 20px;
+    border-bottom: 2px solid #ddd;
+}
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: #007bff; 
+}
+.navbar-nav .nav-link:hover {
+    color: #0056b3; 
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+h6 {
+    color: #333;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.c-form {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.c-form .form-control {
+    border-radius: 5px;
+}
+.c-form button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+.c-form button:hover {
+    background-color: #0056b3;
+}
+
+#Lista {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#Lista .list-group-item {
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: #fff;
+}
+.modal-content {
+    border-radius: 10px;
+}
+
+.btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.modal-header .modal-title {
+    color: #fff; /* Cor branca */
+}
+
+

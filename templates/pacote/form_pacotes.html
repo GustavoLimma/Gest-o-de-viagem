@@ -1,0 +1,48 @@
+<form class="c-form" 
+    {% if pacote %}
+        action="{{ url_for('pacote.atualizar_pacote', pacote_id=pacote.id) }}"
+
+    {% else %}
+        action="{{ url_for('pacote.inserir_pacotes') }}" 
+    {% endif %}
+
+    method="{% if pacote %}PUT{% else %}POST{% endif %}"
+  
+    {% if pacote %}
+      c-swap="#pacote-{{pacote.id}}"
+    {% else %}
+      c-append="#Lista_pacotes"
+    {% endif %}
+ 
+    c-reload-container="true">
+    <h6 class="text-center" >Adicionar ou editar pacotes</h6>
+    <div class="mb-3">
+      <label class="form-label">Nome</label>
+      <input type="text" class="form-control" name="nome" {% if pacote%}value="{{pacote.nome}}" {% endif %}>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Descrição</label>
+      <input type="text" class="form-control" name="descricao" {% if pacote%}value="{{pacote.descricao}}" {% endif %}>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Preço</label>
+      <input type="text" class="form-control" name="preco" {% if pacote %}value="{{pacote.preco}}" {% endif %}>
+  </div>
+
+    <div class="mb-3">
+      <label class="form-label">Data inicio</label>
+      <input type="text" class="form-control" name="data_inicio" {% if pacote %}value="{{pacote.data_inicio}}" {% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Data fim</label>
+        <input type="text" class="form-control" name="data_fim" {% if pacote %}value="{{pacote.data_fim}}" {% endif %}>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">
+      {% if pacote %} Salvar {% else %} Adicionar {% endif %}</button>
+  </form>
+

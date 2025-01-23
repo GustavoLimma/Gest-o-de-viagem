@@ -1,0 +1,16 @@
+<tr id="pacote{{pacote.id}}">
+    <th scope="row">{{ pacote.id }}</th>
+    <td>{{pacote.nome}}</td>
+    <td>{{pacote.descricao}}</td>
+    <td>{{pacote.preco}}</td>
+    <td>
+
+        <button class="btn btn-secondary" c-get="{{ url_for('pacote.detalhe_pacote', pacote_id=pacote.id) }}" c-target="#Exibir-pacote" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button>
+
+        <button class="btn btn-primary" c-get="{{ url_for('pacote.form_edit_pacote', pacote_id=pacote.id) }}" c-target="#form-pacote">Editar</button>
+
+        <button class="btn btn-danger" c-delete="{{ url_for('pacote.deletar_pacote', pacote_id=pacote.id)}}" c-remove-closest="tr">Deletar</button>
+    </td>
+  </tr>
+
+

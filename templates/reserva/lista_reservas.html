@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Cliente_id</th>
+        <th scope="col">Pacote_id</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody id="Lista_reservas">
+      <div class="reserva-item">
+      {% for reserva in reservas %}
+            {% include 'reserva/item_reserva.html '%}
+      {% endfor%}
+    </div>
+    </tbody>
+  </table> 
+

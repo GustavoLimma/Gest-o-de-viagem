@@ -1,0 +1,14 @@
+<tr id="reserva-{{reserva.id}}">
+    <th scope="row">{{ reserva.id }}</th>
+    <td>{{reserva.cliente.nome}}</td>
+    <td>{{reserva.pacote.nome}}</td>
+    <td>
+
+        <button class="btn btn-secondary" c-get="{{ url_for('reserva.detalhe_reservas', reserva_id=reserva.id) }}" c-target="#Exibir-reserva" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button>
+
+        <button class="btn btn-primary" c-get="{{ url_for('reserva.form_edit_reserva', reserva_id=reserva.id) }}" c-target="#form-reserva">Editar</button>
+
+        <button class="btn btn-danger" c-delete="{{ url_for('reserva.deletar_reserva', reserva_id=reserva.id)}}" c-remove-closest="tr">Deletar</button>
+    </td> 
+  </tr>
+  
